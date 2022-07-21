@@ -58,7 +58,7 @@ public class AddCustomerPage extends BasePage{
 		PHONE_NUMBER_ELEMENT.sendKeys(phoneNumber);//sendKeys() takes String "numbers"		
 	}
 	public void insertAddress(String address) {
-		ADDRESS_ELEMENT.sendKeys(address);
+		ADDRESS_ELEMENT.sendKeys(generateRandomNumber(999)+address);
 	}
 	public void insertCity(String city) {
 		CITY_ELEMENT.sendKeys(city);

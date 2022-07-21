@@ -13,6 +13,9 @@ public class LoginTest {
 	
 	WebDriver driver;
 	
+	ExcelReader exlReader = new ExcelReader("src\\main\\java\\testData\\LoginInfo.xlsx");
+	String userName = exlReader.getCellData("LoginInfo", "Username", 2);
+	String password = exlReader.getCellData("LoginInfo", "Password", 2);
 
 	
 	@Test
@@ -23,8 +26,8 @@ public class LoginTest {
 		LoginPage loginPage=PageFactory.initElements(driver, LoginPage.class);
 		//=============================envoking constructor of LoginPage^^ with driver
 		
-		loginPage.insertUserName("demo@techfios.com");
-		loginPage.insertPassword("abc123");;
+		loginPage.insertUserName(userName);
+		loginPage.insertPassword(password);;
 		loginPage.clickSigninButton();
 		
 		DashboardPage dashboardPage= PageFactory.initElements(driver, DashboardPage.class);
