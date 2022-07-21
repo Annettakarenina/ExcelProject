@@ -2,6 +2,7 @@ package page;
 
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,9 +40,11 @@ public class AddCustomerPage extends BasePage{
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"submit\"]") WebElement SAVE_BUTTON_ELEMENT;
 
+	String insertedName;
 	public void insertFullName(String fullName) {
 		int genNum=generateRandomNumber(999);
-		FULL_NAME_ELEMENT.sendKeys(fullName+genNum);
+		insertedName=fullName+genNum;
+		FULL_NAME_ELEMENT.sendKeys(insertedName);
 	}
 	
 	public void validateAddContactPage(String addContactHeader) {
@@ -75,5 +78,21 @@ public class AddCustomerPage extends BasePage{
 	public void clickSaveButton() {
 		SAVE_BUTTON_ELEMENT.click();
 	}
-
+	//tbody/tr[1]/td[3]
+	//tbody/tr[2]/td[3]
+	//tbody/tr[3]/td[3]
+	//tbody/tr[4]/td[3]
+	
+	String beforeXpath="//tbody/tr[";
+	String afterXpath="]/td[3]";
+	
+	public void validateInsertedCustomer() {
+	for(int i=1;i<+10;i++) {
+		String namesFromList=driver.findElement(By.xpath(beforeXpath+i+afterXpath)).getText();
+		System.out.println(namesFromList);
+		Assert.assertEquals(namesFromList, insertedName, "Inserted name is not available");
+	}
+	}
+	
 }
+

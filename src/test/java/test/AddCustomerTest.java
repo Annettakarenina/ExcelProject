@@ -28,7 +28,7 @@ public class AddCustomerTest {
 	String zip = exlReader.getCellData("AddContactInfo", "Zip", 2);
 
 	@Test
-	public void userShouldBeAbleToCreateCustomer() {
+	public void userShouldBeAbleToCreateCustomer() throws InterruptedException {
 
 		driver = BrowserFactory.init();
 
@@ -54,6 +54,11 @@ public class AddCustomerTest {
 		addCustomerPage.insertState(state);
 		addCustomerPage.insertZip(zip);
 		addCustomerPage.clickSaveButton();
+		
+		dashboardPage.clickListCustomerMenuElement();
+		dashboardPage.validateListCustomerPageHeader("Contacts");
+		
+		addCustomerPage.validateInsertedCustomer();
 
 		BrowserFactory.tearDown();
 	}
