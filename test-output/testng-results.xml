@@ -2,17 +2,17 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="35" started-at="2022-07-20T09:37:48 CDT" finished-at="2022-07-20T09:37:48 CDT">
+  <suite name="Default suite" duration-ms="34" started-at="2022-07-21T06:41:31 CDT" finished-at="2022-07-21T06:41:31 CDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="35" started-at="2022-07-20T09:37:48 CDT" finished-at="2022-07-20T09:37:48 CDT">
+    <test name="Default test" duration-ms="34" started-at="2022-07-21T06:41:31 CDT" finished-at="2022-07-21T06:41:31 CDT">
       <class name="test.AddCustomerTest">
-        <test-method status="FAIL" signature="userShouldBeAbleToCreateCustomer()[pri:0, instance:test.AddCustomerTest@5fbdfdcf]" name="userShouldBeAbleToCreateCustomer" duration-ms="7" started-at="2022-07-20T09:37:48 CDT" finished-at="2022-07-20T09:37:48 CDT">
+        <test-method status="FAIL" signature="userShouldBeAbleToCreateCustomer()[pri:0, instance:test.AddCustomerTest@5fbdfdcf]" name="userShouldBeAbleToCreateCustomer" duration-ms="7" started-at="2022-07-21T06:41:31 CDT" finished-at="2022-07-21T06:41:31 CDT">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
 at util.BrowserFactory.init(BrowserFactory.java:44)
-at test.AddCustomerTest.userShouldBeAbleToCreateCustomer(AddCustomerTest.java:27)
+at test.AddCustomerTest.userShouldBeAbleToCreateCustomer(AddCustomerTest.java:33)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
