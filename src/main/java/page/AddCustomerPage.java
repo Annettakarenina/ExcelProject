@@ -82,15 +82,25 @@ public class AddCustomerPage extends BasePage{
 	//tbody/tr[2]/td[3]
 	//tbody/tr[3]/td[3]
 	//tbody/tr[4]/td[3]
+	////tbody/tr[1]/td[3]/following-sibling::td[4]/a[2]
 	
 	String beforeXpath="//tbody/tr[";
 	String afterXpath="]/td[3]";
 	
-	public void validateInsertedCustomer() {
+	String afterXpathDelete="]/td[3]/following-sibling::td[4]/a[2]";
+	
+	public void validateInsertedCustomerAndDelete() {
 	for(int i=1;i<+10;i++) {
 		String namesFromList=driver.findElement(By.xpath(beforeXpath+i+afterXpath)).getText();
-		System.out.println(namesFromList);
-		Assert.assertEquals(namesFromList, insertedName, "Inserted name is not available");
+//		System.out.println(namesFromList);
+//		Assert.assertEquals(namesFromList, insertedName, "Inserted name is not available");
+		
+		if(namesFromList.equalsIgnoreCase(insertedName)) {
+			System.out.println("Inserted name exists");
+			driver.findElement(By.xpath(beforeXpath+i+afterXpathDelete)).click();
+		}
+		
+		break;//         loop has to stop once the value matches
 	}
 	}
 	

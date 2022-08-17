@@ -9,6 +9,10 @@ public class LoginPage {
 	
 	WebDriver driver;
 	
+	public LoginPage(WebDriver driver){
+		this.driver=driver;
+	}
+	
 	//========BY CLASS AND WEBELEMENT ARE NOT USED TO STORE ELEMENTS
 	
 	//WebElement UserNameElement=driver.findElement(By.xpath("//input[@id='username']"));
@@ -18,9 +22,7 @@ public class LoginPage {
 	@FindBy(how=How.XPATH,using ="//input[@id='password']") WebElement PASSWORD_ELEMENT;
 	@FindBy(how=How.XPATH,using ="/html/body/div/div/div/form/div[3]/button") WebElement SIGNIN_BUTTON_ELEMENT;
 	
-	public LoginPage(WebDriver driver){
-		this.driver=driver;
-	}
+	
 	
 	public void insertUserName(String userName) {
 		USER_NAME_ELEMENT.sendKeys(userName);

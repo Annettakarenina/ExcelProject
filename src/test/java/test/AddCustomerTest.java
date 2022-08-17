@@ -58,7 +58,7 @@ public class AddCustomerTest {
 		dashboardPage.clickListCustomerMenuElement();
 		dashboardPage.validateListCustomerPageHeader("Contacts");
 		
-		addCustomerPage.validateInsertedCustomer();
+		addCustomerPage.validateInsertedCustomerAndDelete();
 
 		BrowserFactory.tearDown();
 	}
