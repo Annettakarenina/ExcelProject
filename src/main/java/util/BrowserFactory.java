@@ -35,10 +35,10 @@ public class BrowserFactory {
 		readConfig();
 		
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "driver/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "driver\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
