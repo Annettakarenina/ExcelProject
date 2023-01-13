@@ -22,7 +22,7 @@ public class AddCustomerPage extends BasePage{
 
 	@FindBy(how = How.XPATH, using = "//*[@id=\"account\"]") WebElement FULL_NAME_ELEMENT;
 
-	@FindBy(how = How.XPATH, using = "//*[@id=\"cid\"]") WebElement COMPANY_DROPDOWN_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//select[@id='cid']") WebElement COMPANY_DROPDOWN_ELEMENT;
 
 	@FindBy(how = How.XPATH, using = "//*[@id=\"email\"]") WebElement EMAIL_ELEMENT;
 
@@ -36,7 +36,7 @@ public class AddCustomerPage extends BasePage{
 
 	@FindBy(how = How.XPATH, using = "//*[@id=\"zip\"]") WebElement ZIP_ELEMENT;
 
-	@FindBy(how = How.XPATH, using = "//*[@id=\"rform\"]/div[1]/div[1]/div[9]/div/span/span[1]/span")	WebElement COUNTRY_DROPDOWN_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//select[@id='country']")	WebElement COUNTRY_DROPDOWN_ELEMENT;
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"submit\"]") WebElement SAVE_BUTTON_ELEMENT;
 
